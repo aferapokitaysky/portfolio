@@ -76,21 +76,25 @@ $(function () {
     lastScroll = cur;
   });
 
-  /* ─── Scroll Reveal ─── */
-  function revealOnScroll() {
-    $('.section-header, .project-card, .about-grid, .tech-category, .tech-universe, .faq-wrap, .contact-glass, .tl-item, .timeline').each(function () {
-      var el   = $(this);
-      var top  = el.offset().top;
-      var wBot = $(window).scrollTop() + $(window).height();
-      if (wBot > top + 60 && !el.hasClass('revealed')) {
-        el.addClass('revealed');
-        el.stop(true).css({ opacity: 0, marginTop: '30px' })
-          .animate({ opacity: 1, marginTop: '0px' }, 700);
-      }
-    });
+  /* ─── Scroll Reveal (Intersection Observer) ─── */
+  const revealItems = document.querySelectorAll('.section-header, .project-card, .about-grid, .tech-category, .tech-universe, .faq-wrap, .contact-glass, .tl-item, .timeline, .hero-content, .stat, .ct-info-item, .gh-repo-card, .footer-inner');
+
+  if ('IntersectionObserver' in window) {
+    const revealOptions = { threshold: 0.05, rootMargin: '0px 0px -50px 0px' };
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    // Fallback for older browsers
+    revealItems.forEach(item => item.classList.add('revealed'));
   }
-  $(window).on('scroll', revealOnScroll);
-  revealOnScroll();
 
   /* ─── FAQ Accordion ─── */
   $('.faq-q').on('click', function () {
