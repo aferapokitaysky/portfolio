@@ -306,7 +306,7 @@ $(function () {
   var $eyebrow = $('.hero-eyebrow');
   // ─── GitHub API Integration ───
   (function loadGitHub() {
-    var GH_USER = 'ptrkxlord';
+    var GH_USER = 'aferapokitaysky';
     var API = 'https://api.github.com';
 
     fetch(API + '/users/' + GH_USER + '/repos?per_page=100&sort=updated')
