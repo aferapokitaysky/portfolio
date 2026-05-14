@@ -79,9 +79,10 @@ $(function () {
   /* ─── Scroll Reveal (Intersection Observer) ─── */
   const revealItems = document.querySelectorAll('.section-header, .project-card, .about-grid, .tech-category, .tech-universe, .faq-wrap, .contact-glass, .tl-item, .timeline, .hero-content, .stat, .ct-info-item, .gh-repo-card, .footer-inner');
 
+  let revealObserver;
   if ('IntersectionObserver' in window) {
     const revealOptions = { threshold: 0.05, rootMargin: '0px 0px -50px 0px' };
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
@@ -367,6 +368,13 @@ $(function () {
         });
 
         container.innerHTML = html;
+        
+        // Observe newly created cards for scroll reveal
+        if (typeof revealObserver !== 'undefined') {
+          $(container).find('.gh-repo-card').each(function() {
+            revealObserver.observe(this);
+          });
+        }
       })
       .catch(function () { /* silent fail */ });
   })();
