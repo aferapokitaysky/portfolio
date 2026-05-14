@@ -691,8 +691,8 @@
               data-ru="Опен-сорс проекты, эксперименты и всё, что я создаю — на GitHub.">Open-source projects,
               experiments, and everything I build — all on GitHub.</p>
           </div>
-          <a href="https://github.com/ptrkxlord" target="_blank" rel="noopener" class="gh-btn">
-            <span data-en="@ptrkxlord" data-ru="@ptrkxlord">@ptrkxlord</span>
+          <a href="https://github.com/aferapokitaysky" target="_blank" rel="noopener" class="gh-btn">
+            <span data-en="@aferapokitaysky" data-ru="@aferapokitaysky">@aferapokitaysky</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
               <path d="M7 17l9.2-9.2M17 17V8h-9" />
             </svg>
@@ -787,7 +787,8 @@
           </div>
 
           <div class="dossier-badges">
-            <span class="d-badge d-blue" data-en="Platform: Windows 10/11" data-ru="Платформа: Windows 10/11">Platform: Windows 10/11</span>
+            <span class="d-badge d-blue" data-en="Platform: Windows 10/11" data-ru="Платформа: Windows 10/11">Platform:
+              Windows 10/11</span>
             <span class="d-badge d-gold" data-en="Build: NativeAOT" data-ru="Сборка: NativeAOT">Build: NativeAOT</span>
             <span class="d-badge d-red" data-en="Engine: C++ / ASM" data-ru="Ядро: C++ / ASM">Engine: C++ / ASM</span>
           </div>
@@ -795,59 +796,83 @@
           <p class="dossier-intro"
             data-en="<strong>DUCK Stealth</strong> — a modular framework for covert data collection and remote management on Windows. The system is designed with a <strong>Zero-Disk Presence</strong> architecture, minimizing artifacts on the target system and evading behavioral analysis of modern EDR/AV solutions."
             data-ru="<strong>DUCK Stealth</strong> — модульный фреймворк для скрытного сбора данных и удаленного управления в среде Windows. Система спроектирована по принципу <strong>Zero-Disk Presence</strong>, что позволяет минимизировать количество артефактов на целевой системе и обходить поведенческий анализ современных EDR/AV систем.">
-            <strong>DUCK Stealth</strong> — a modular framework for covert data collection and remote management on Windows. The system is designed with a <strong>Zero-Disk Presence</strong> architecture, minimizing artifacts on the target system and evading behavioral analysis of modern EDR/AV solutions.
+            <strong>DUCK Stealth</strong> — a modular framework for covert data collection and remote management on
+            Windows. The system is designed with a <strong>Zero-Disk Presence</strong> architecture, minimizing
+            artifacts on the target system and evading behavioral analysis of modern EDR/AV solutions.
           </p>
 
           <hr class="dossier-hr">
 
-          <h3 class="dossier-h3" data-en="🏗 System Architecture" data-ru="🏗 Архитектура системы">🏗 System Architecture</h3>
+          <h3 class="dossier-h3" data-en="🏗 System Architecture" data-ru="🏗 Архитектура системы">🏗 System
+            Architecture</h3>
           <p data-en="The framework is a hybrid system consisting of a C# management core and a native C++/Assembly execution layer."
             data-ru="Фреймворк представляет собой гибридную систему, состоящую из управляющего ядра на C# и нативного исполнительного слоя на C++/Assembly.">
-            The framework is a hybrid system consisting of a C# management core and a native C++/Assembly execution layer.
+            The framework is a hybrid system consisting of a C# management core and a native C++/Assembly execution
+            layer.
           </p>
           <ul class="dossier-list">
-            <li data-en="<strong>Main Controller (C# NativeAOT):</strong> The core bot. The entire project compiles directly to x64 machine code, eliminating MSIL. Analysis requires IDA Pro/Ghidra. Utilizes an asynchronous Task model."
+            <li
+              data-en="<strong>Main Controller (C# NativeAOT):</strong> The core bot. The entire project compiles directly to x64 machine code, eliminating MSIL. Analysis requires IDA Pro/Ghidra. Utilizes an asynchronous Task model."
               data-ru="<strong>Main Controller (C# NativeAOT):</strong> Основной бот. Весь проект компилируется напрямую в машинный код x64, исключая наличие MSIL. Анализ требует работы в IDA Pro/Ghidra. Использует асинхронную Task-модель.">
-              <strong>Main Controller (C# NativeAOT):</strong> The core bot. The entire project compiles directly to x64 machine code, eliminating MSIL. Analysis requires IDA Pro/Ghidra. Utilizes an asynchronous Task model.
+              <strong>Main Controller (C# NativeAOT):</strong> The core bot. The entire project compiles directly to x64
+              machine code, eliminating MSIL. Analysis requires IDA Pro/Ghidra. Utilizes an asynchronous Task model.
             </li>
-            <li data-en="<strong>Elevator Core (C++):</strong> The native injection core. Uses <em>Reflective Manual Mapping</em> for loading into memory without LoadLibrary, and <em>Direct Syscalls</em> to invoke OS kernel functions, bypassing usermode hooks."
+            <li
+              data-en="<strong>Elevator Core (C++):</strong> The native injection core. Uses <em>Reflective Manual Mapping</em> for loading into memory without LoadLibrary, and <em>Direct Syscalls</em> to invoke OS kernel functions, bypassing usermode hooks."
               data-ru="<strong>Elevator Core (C++):</strong> Нативное ядро для инжекта. Использует <em>Reflective Manual Mapping</em> для загрузки в память без LoadLibrary и <em>Direct Syscalls</em> для вызова функций ядра ОС, минуя хуки юзермода.">
-              <strong>Elevator Core (C++):</strong> The native injection core. Uses <em>Reflective Manual Mapping</em> for loading into memory without LoadLibrary, and <em>Direct Syscalls</em> to invoke OS kernel functions, bypassing usermode hooks.
+              <strong>Elevator Core (C++):</strong> The native injection core. Uses <em>Reflective Manual Mapping</em>
+              for loading into memory without LoadLibrary, and <em>Direct Syscalls</em> to invoke OS kernel functions,
+              bypassing usermode hooks.
             </li>
           </ul>
 
-          <h3 class="dossier-h3" data-en="👻 Stealth Collection Tech" data-ru="👻 Stealth-технологии сбора">👻 Stealth Collection Tech</h3>
+          <h3 class="dossier-h3" data-en="👻 Stealth Collection Tech" data-ru="👻 Stealth-технологии сбора">👻 Stealth
+            Collection Tech</h3>
           <ul class="dossier-list">
-            <li data-en="<strong>Zero-Disk Extraction (In-Memory Streaming):</strong> Data is never written to %TEMP%. The bot opens a Named Pipe tunnel, and the native core streams data directly from memory. Final transmission occurs via encrypted MemoryStream."
+            <li
+              data-en="<strong>Zero-Disk Extraction (In-Memory Streaming):</strong> Data is never written to %TEMP%. The bot opens a Named Pipe tunnel, and the native core streams data directly from memory. Final transmission occurs via encrypted MemoryStream."
               data-ru="<strong>Zero-Disk Extraction (In-Memory Streaming):</strong> Данные не пишутся в %TEMP%. Бот открывает Named Pipe туннель, и нативное ядро стримит в него данные напрямую из памяти. Финальная передача идет через зашифрованный MemoryStream.">
-              <strong>Zero-Disk Extraction (In-Memory Streaming):</strong> Data is never written to %TEMP%. The bot opens a Named Pipe tunnel, and the native core streams data directly from memory. Final transmission occurs via encrypted MemoryStream.
+              <strong>Zero-Disk Extraction (In-Memory Streaming):</strong> Data is never written to %TEMP%. The bot
+              opens a Named Pipe tunnel, and the native core streams data directly from memory. Final transmission
+              occurs via encrypted MemoryStream.
             </li>
-            <li data-en="<strong>Handle Duplication:</strong> To read locked database files (e.g., browser Cookies), the framework duplicates the process handle via <code>NtDuplicateObject</code>, avoiding suspicious process termination."
+            <li
+              data-en="<strong>Handle Duplication:</strong> To read locked database files (e.g., browser Cookies), the framework duplicates the process handle via <code>NtDuplicateObject</code>, avoiding suspicious process termination."
               data-ru="<strong>Handle Duplication:</strong> Для чтения заблокированных файлов баз данных (например, Cookies браузера) фреймворк дублирует хендл процесса через <code>NtDuplicateObject</code>, избегая подозрительного завершения процессов.">
-              <strong>Handle Duplication:</strong> To read locked database files (e.g., browser Cookies), the framework duplicates the process handle via <code>NtDuplicateObject</code>, avoiding suspicious process termination.
+              <strong>Handle Duplication:</strong> To read locked database files (e.g., browser Cookies), the framework
+              duplicates the process handle via <code>NtDuplicateObject</code>, avoiding suspicious process termination.
             </li>
           </ul>
 
-          <h3 class="dossier-h3" data-en="🛡 Evasion Mechanisms" data-ru="🛡 Механизмы обхода защиты (Evasion)">🛡 Evasion Mechanisms</h3>
+          <h3 class="dossier-h3" data-en="🛡 Evasion Mechanisms" data-ru="🛡 Механизмы обхода защиты (Evasion)">🛡
+            Evasion Mechanisms</h3>
           <ul class="dossier-list">
-            <li data-en="<strong>Dynamic SSN Resolution:</strong> Parses ntdll.dll on disk/in memory to find System Service Numbers (SSN) and invokes them via <code>syscall</code>."
+            <li
+              data-en="<strong>Dynamic SSN Resolution:</strong> Parses ntdll.dll on disk/in memory to find System Service Numbers (SSN) and invokes them via <code>syscall</code>."
               data-ru="<strong>Dynamic SSN Resolution:</strong> Парсинг ntdll.dll на диске/в памяти для поиска System Service Numbers (SSN) и их вызов через <code>syscall</code>.">
-              <strong>Dynamic SSN Resolution:</strong> Parses ntdll.dll on disk/in memory to find System Service Numbers (SSN) and invokes them via <code>syscall</code>.
+              <strong>Dynamic SSN Resolution:</strong> Parses ntdll.dll on disk/in memory to find System Service Numbers
+              (SSN) and invokes them via <code>syscall</code>.
             </li>
-            <li data-en="<strong>Anti-Analysis:</strong> <code>RDTSC</code> timing checks to detect emulation/sandboxes. Hardware breakpoint checks for DR0-DR7."
+            <li
+              data-en="<strong>Anti-Analysis:</strong> <code>RDTSC</code> timing checks to detect emulation/sandboxes. Hardware breakpoint checks for DR0-DR7."
               data-ru="<strong>Anti-Analysis:</strong> <code>RDTSC</code> проверки тайминга для детекта эмуляции/песочниц. Проверка аппаратных брейкпоинтов DR0-DR7.">
-              <strong>Anti-Analysis:</strong> <code>RDTSC</code> timing checks to detect emulation/sandboxes. Hardware breakpoint checks for DR0-DR7.
+              <strong>Anti-Analysis:</strong> <code>RDTSC</code> timing checks to detect emulation/sandboxes. Hardware
+              breakpoint checks for DR0-DR7.
             </li>
-            <li data-en="<strong>x64 Stack Alignment:</strong> Strict x64 ABI compliance during reflective loading (32-byte Shadow Space, 16-byte alignment) for stability without BSODs."
+            <li
+              data-en="<strong>x64 Stack Alignment:</strong> Strict x64 ABI compliance during reflective loading (32-byte Shadow Space, 16-byte alignment) for stability without BSODs."
               data-ru="<strong>x64 Stack Alignment:</strong> Строгая поддержка x64 ABI при рефлективной загрузке (32-байт Shadow Space, 16-байт выравнивание) для стабильности без BSOD.">
-              <strong>x64 Stack Alignment:</strong> Strict x64 ABI compliance during reflective loading (32-byte Shadow Space, 16-byte alignment) for stability without BSODs.
+              <strong>x64 Stack Alignment:</strong> Strict x64 ABI compliance during reflective loading (32-byte Shadow
+              Space, 16-byte alignment) for stability without BSODs.
             </li>
           </ul>
 
-          <h3 class="dossier-h3" data-en="🔌 IPC Protocol" data-ru="🔌 Межпроцессное взаимодействие">🔌 IPC Protocol</h3>
+          <h3 class="dossier-h3" data-en="🔌 IPC Protocol" data-ru="🔌 Межпроцессное взаимодействие">🔌 IPC Protocol
+          </h3>
           <p data-en="Communication between the browser core and the controller via asynchronous Named Pipes with restricted ACLs to prevent interception."
             data-ru="Связь между ядром в браузере и контроллером через асинхронные Named Pipes с ограничением ACL для защиты от перехвата.">
-            Communication between the browser core and the controller via asynchronous Named Pipes with restricted ACLs to prevent interception.
+            Communication between the browser core and the controller via asynchronous Named Pipes with restricted ACLs
+            to prevent interception.
           </p>
           <pre class="dossier-code"><code data-en="&lt;!-- Message Protocol --&gt;
 FILE:path|content  // Data for ZIP
@@ -860,27 +885,35 @@ FILE:path|content  // Data for ZIP
 LOG:message        // Telemetry
 FINISH             // Cycle end</code></pre>
 
-          <h3 class="dossier-h3" data-en="🏗 Build System (Vault 2.0)" data-ru="🏗 Система сборки (Vault 2.0)">🏗 Build System (Vault 2.0)</h3>
+          <h3 class="dossier-h3" data-en="🏗 Build System (Vault 2.0)" data-ru="🏗 Система сборки (Vault 2.0)">🏗 Build
+            System (Vault 2.0)</h3>
           <ul class="dossier-list">
-            <li data-en="<strong>Synchronized Secrets:</strong> All strings are AES-GCM encrypted at build time. Zero plaintext strings in the binary."
+            <li
+              data-en="<strong>Synchronized Secrets:</strong> All strings are AES-GCM encrypted at build time. Zero plaintext strings in the binary."
               data-ru="<strong>Synchronized Secrets:</strong> Все строки шифруются AES-GCM на этапе сборки. В бинарнике ноль открытых строк.">
-              <strong>Synchronized Secrets:</strong> All strings are AES-GCM encrypted at build time. Zero plaintext strings in the binary.
+              <strong>Synchronized Secrets:</strong> All strings are AES-GCM encrypted at build time. Zero plaintext
+              strings in the binary.
             </li>
-            <li data-en="<strong>Ghost Sign:</strong> Signed with a fake Microsoft Code Signing certificate and clones resources (icons, manifests) from <code>svchost.exe</code>."
+            <li
+              data-en="<strong>Ghost Sign:</strong> Signed with a fake Microsoft Code Signing certificate and clones resources (icons, manifests) from <code>svchost.exe</code>."
               data-ru="<strong>Ghost Sign:</strong> Подпись фейковым сертификатом Microsoft Code Signing и клонирование ресурсов (иконки, манифесты) из <code>svchost.exe</code>.">
-              <strong>Ghost Sign:</strong> Signed with a fake Microsoft Code Signing certificate and clones resources (icons, manifests) from <code>svchost.exe</code>.
+              <strong>Ghost Sign:</strong> Signed with a fake Microsoft Code Signing certificate and clones resources
+              (icons, manifests) from <code>svchost.exe</code>.
             </li>
           </ul>
 
           <h3 class="dossier-h3" data-en="📈 Capabilities" data-ru="📈 Функциональные возможности">📈 Capabilities</h3>
           <ul class="dossier-list">
-            <li data-en="<strong>Browser Stealer:</strong> Supports Chromium and Gecko (AES v10/v11 Passwords, Cookies, Cards)."
+            <li
+              data-en="<strong>Browser Stealer:</strong> Supports Chromium and Gecko (AES v10/v11 Passwords, Cookies, Cards)."
               data-ru="<strong>Browser Stealer:</strong> Поддержка Chromium и Gecko (Пароли AES v10/v11, Куки, Карты).">
               <strong>Browser Stealer:</strong> Supports Chromium and Gecko (AES v10/v11 Passwords, Cookies, Cards).
             </li>
-            <li data-en="<strong>Social & Crypto:</strong> Captures Telegram (tdata), Discord, and Steam (SSFN) sessions. Collects 40+ crypto wallet extensions."
+            <li
+              data-en="<strong>Social & Crypto:</strong> Captures Telegram (tdata), Discord, and Steam (SSFN) sessions. Collects 40+ crypto wallet extensions."
               data-ru="<strong>Social & Crypto:</strong> Захват сессий Telegram (tdata), Discord, Steam (SSFN). Сбор 40+ расширений криптокошельков.">
-              <strong>Social & Crypto:</strong> Captures Telegram (tdata), Discord, and Steam (SSFN) sessions. Collects 40+ crypto wallet extensions.
+              <strong>Social & Crypto:</strong> Captures Telegram (tdata), Discord, and Steam (SSFN) sessions. Collects
+              40+ crypto wallet extensions.
             </li>
           </ul>
         </div>
