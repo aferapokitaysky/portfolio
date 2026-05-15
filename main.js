@@ -236,19 +236,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const dossierBox = document.getElementById('dossier-box');
 
   function openDossier() {
+    if (typeof lenis !== 'undefined') lenis.stop();
+    document.getElementById('navbar').classList.add('navbar-hidden');
     dossierOverlay.style.display = 'block';
     dossierBox.style.display = 'flex';
     gsap.fromTo(dossierOverlay, { opacity: 0 }, { opacity: 1, duration: 0.3 });
-    gsap.fromTo(dossierBox, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, delay: 0.1, ease: "power2.out" });
+    gsap.fromTo(dossierBox, { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.1, ease: "power2.out" });
     document.body.style.overflow = 'hidden';
   }
 
   function closeDossier() {
+    if (typeof lenis !== 'undefined') lenis.start();
     gsap.to(dossierBox, { opacity: 0, duration: 0.3, onComplete: () => {
       dossierBox.style.display = 'none';
       gsap.to(dossierOverlay, { opacity: 0, duration: 0.28, onComplete: () => {
         dossierOverlay.style.display = 'none';
         document.body.style.overflow = '';
+        document.getElementById('navbar').classList.remove('navbar-hidden');
       }});
     }});
   }
