@@ -96,6 +96,10 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   z-index: 200; width: min(1100px, 96vw);
   animation: navSlideDown .8s cubic-bezier(.16,1,.3,1) .1s both;
 }
+.navbar-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 @keyframes navSlideDown {
   from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
@@ -674,7 +678,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 }
 
 .rt-lead {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-main);
   font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-weight: 300; color: var(--white);
   line-height: 1.3; margin-bottom: 1rem;
@@ -895,6 +899,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   -webkit-backdrop-filter: blur(20px);
   box-shadow: inset 0 1px 0 var(--hl), 0 20px 60px rgba(0,0,0,.4);
   transition: border-color .35s, transform .35s;
+  will-change: transform, opacity;
 }
 
 .project-card:hover {
@@ -1159,7 +1164,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 }
 
 .ct-lead {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-main);
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 300; color: var(--white);
   margin-bottom: .8rem;
@@ -1402,7 +1407,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 .gh-text { flex: 1; min-width: 0; }
 
 .gh-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-main);
   font-size: 1.6rem; font-weight: 300;
   color: var(--white); margin-bottom: .4rem;
 }
@@ -1493,6 +1498,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   display: flex; flex-direction: column;
   gap: .8rem;
   transition: border-color .3s, transform .3s, box-shadow .3s;
+  will-change: transform, box-shadow;
   cursor: none;
 }
 
@@ -1651,6 +1657,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 
 #dossier-box {
   display: none; position: fixed;
+  flex-direction: column;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: min(800px, 95vw); max-height: 90vh;
@@ -1664,7 +1671,8 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 
 #dossier-content {
   display: flex; flex-direction: column;
-  max-height: 90vh;
+  flex: 1; min-height: 0; width: 100%;
+  overflow: hidden;
 }
 
 .dossier-header-sticky {
@@ -1688,6 +1696,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 #dossier-close:hover { color: var(--white); }
 
 .dossier-body {
+  flex: 1; min-height: 0;
   padding: 2.5rem; overflow-y: auto;
   scrollbar-width: thin; scrollbar-color: var(--b3) transparent;
 }
@@ -1849,7 +1858,11 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   .dossier-logo-container { width: 80px; height: 80px; }
   .dossier-logo { width: 50px; height: 50px; }
   .dossier-text-ring { display: none; }
-  #dossier-box { width: 100vw; height: 100vh; border-radius: 0; }
+  #dossier-box { 
+    inset: 0; width: auto; height: auto; max-height: none; 
+    border-radius: 0; top: 0; left: 0; transform: none; 
+  }
+  #dossier-content { max-height: none; height: 100%; }
   
   .rt-hero-card { margin: 0; border-radius: var(--rl); }
   .rt-term-body { font-size: .6rem; }
