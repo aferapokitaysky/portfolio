@@ -261,6 +261,30 @@ document.addEventListener('DOMContentLoaded', () => {
   dossierOverlay.addEventListener('click', closeDossier);
   document.getElementById('dossier-close').addEventListener('click', closeDossier);
 
+  // Dossier Tabs Switching
+  const dossierTabs = document.querySelectorAll('.dossier-tab');
+  const dossierTabContents = document.querySelectorAll('.dossier-tab-content');
+  if (dossierTabs.length > 0) {
+    dossierTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        dossierTabs.forEach(t => t.classList.remove('active'));
+        dossierTabContents.forEach(c => c.classList.remove('active'));
+        
+        tab.classList.add('active');
+        const target = tab.dataset.tab;
+        const targetContent = document.getElementById(`tab-content-${target}`);
+        if (targetContent) {
+          targetContent.classList.add('active');
+          // Scroll the body of the dossier to the top on tab change
+          const dossierBody = document.querySelector('.dossier-body');
+          if (dossierBody) {
+            dossierBody.scrollTop = 0;
+          }
+        }
+      });
+    });
+  }
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       closeModal();
