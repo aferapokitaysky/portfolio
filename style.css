@@ -305,6 +305,49 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 32px rgba(0,0,0,.4);
 }
 
+.section-header:hover .section-badge-logo {
+  transform: scale(1.15);
+  box-shadow: 0 0 22px rgba(255, 136, 0, 0.7) !important;
+}
+
+.section-badge-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 136, 0, 0.4);
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 2px;
+}
+
+/* Logo-only badge variant (projects section) */
+.section-logo-badge {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 56px !important;
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.section-logo-badge .section-badge-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.55);
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0 !important;
+}
+
+.section-header:hover .section-logo-badge .section-badge-logo {
+  transform: scale(1.12);
+  box-shadow: 0 0 32px rgba(255, 136, 0, 0.8) !important;
+}
+
 .section-num-badge svg {
   width: 20px; height: 20px;
   color: var(--g2);
@@ -1893,6 +1936,16 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   .hero-title { font-size: 2.6rem; }
   .section-header { margin-bottom: 2rem; }
   .section-num-badge { width: 28px; height: 28px; font-size: .55rem; }
+  .section-badge-logo { width: 18px; height: 18px; margin-bottom: 1px; }
+  .section-logo-badge {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .section-logo-badge .section-badge-logo {
+    width: 28px !important;
+    height: 28px !important;
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.5) !important;
+  }
   
   .about-photo { display: flex; justify-content: center; margin-bottom: 1rem; }
   .about-img-wrap { width: 180px; aspect-ratio: 1/1; border-radius: 50%; }

@@ -483,4 +483,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 400);
   }
 
+  // Active CLI Visualizer Animation
+  const vBars = document.querySelectorAll('.v-bar');
+  if (vBars.length > 0) {
+    setInterval(() => {
+      vBars.forEach(bar => {
+        const height = Math.floor(Math.random() * 80) + 20; // 20% to 100%
+        bar.style.height = height + '%';
+      });
+    }, 100);
+  }
+
 });
