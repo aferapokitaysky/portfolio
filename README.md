@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio website showcasing full-stack development and security research projects.
+Personal portfolio website showcasing full-stack development and systems architecture.
 
 ## Project Structure
 - `index.html`: Main page structure.
