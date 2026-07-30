@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─── Scroll Reveal (GSAP ScrollTrigger) ─── */
-  const revealItems = gsap.utils.toArray('.section-header, .project-card, .about-grid, .tech-category, .tech-universe, .faq-wrap, .contact-glass, .tl-item, .timeline, .hero-content, .stat, .ct-info-item, .gh-repo-card, .footer-inner');
+  const revealItems = gsap.utils.toArray('.section-header, .project-card, .rt-card, .about-grid, .tech-category, .tech-universe, .faq-wrap, .contact-glass, .tl-item, .timeline, .hero-content, .stat, .ct-info-item, .gh-repo-card, .footer-inner');
 
   revealItems.forEach((item) => {
     gsap.from(item, {
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dossierOverlay = document.getElementById('dossier-overlay');
   const dossierBox = document.getElementById('dossier-box');
 
-  function openDossier() {
+  function openDossier(tabTarget) {
     if (typeof lenis !== 'undefined') lenis.stop();
     document.getElementById('navbar').classList.add('navbar-hidden');
     dossierOverlay.style.display = 'block';
@@ -243,6 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.fromTo(dossierOverlay, { opacity: 0 }, { opacity: 1, duration: 0.3 });
     gsap.fromTo(dossierBox, { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.1, ease: "power2.out" });
     document.body.style.overflow = 'hidden';
+
+    // Auto-select tab if provided
+    if (typeof tabTarget === 'string') {
+      const targetTab = document.querySelector(`.dossier-tab[data-tab="${tabTarget}"]`);
+      if (targetTab) {
+        targetTab.click();
+      }
+    }
   }
 
   function closeDossier() {
@@ -257,7 +265,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }});
   }
 
-  document.getElementById('btn-open-dossier').addEventListener('click', openDossier);
+  // Bind click handlers for dossier triggers
+  document.querySelectorAll('[data-open-dossier]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = btn.getAttribute('data-open-dossier');
+      openDossier(target);
+    });
+  });
+
+  const mainDossierBtn = document.getElementById('btn-open-dossier');
+  if (mainDossierBtn) {
+    mainDossierBtn.addEventListener('click', () => openDossier('taskhunt'));
+  }
   dossierOverlay.addEventListener('click', closeDossier);
   document.getElementById('dossier-close').addEventListener('click', closeDossier);
 

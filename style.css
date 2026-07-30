@@ -322,30 +322,39 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 
 /* Logo-only badge variant (projects section) */
 .section-logo-badge {
-  background: none !important;
+  background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  width: 56px !important;
-  height: 56px !important;
+  width: auto !important;
+  max-width: 260px !important;
+  height: 48px !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
 }
 
 .section-logo-badge .section-badge-logo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 136, 0, 0.55);
-  object-fit: cover;
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: auto !important;
+  max-width: 260px !important;
+  height: 100% !important;
+  max-height: 48px !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 136, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
   margin: 0 !important;
 }
 
+.section-header:hover .section-logo-badge {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .section-header:hover .section-logo-badge .section-badge-logo {
-  transform: scale(1.12);
-  box-shadow: 0 0 32px rgba(255, 136, 0, 0.8) !important;
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.7)) !important;
 }
 
 .section-num-badge svg {
@@ -1756,44 +1765,27 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 }
 
 .dossier-logo-container {
-  position: relative; width: 100px; height: 100px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%;
+  position: relative; width: auto; max-width: 260px; height: 54px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: flex-start;
+  border-radius: 0;
   animation: logo-pop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   opacity: 0;
-  transform: scale(0.5) rotate(-30deg);
 }
 
 .dossier-logo {
-  width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
-  mix-blend-mode: screen; /* Removes white background if it's pure white */
+  width: auto; max-width: 260px; height: 100%; max-height: 54px;
+  border-radius: 0; object-fit: contain;
   z-index: 2;
   transition: transform 0.3s;
 }
 
 .dossier-logo-container:hover .dossier-logo {
-  transform: scale(1.1);
-}
-
-.dossier-text-ring {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  animation: rotate-text 20s linear infinite; /* Slower, smoother rotation */
-  z-index: 1;
-}
-
-.dossier-text-ring text {
-  font-family: 'DM Mono', monospace; font-size: 11px; /* Smaller text */
-  fill: #ff8800; /* Nice orange color */
-  letter-spacing: 0.12em;
+  transform: scale(1.05);
 }
 
 @keyframes logo-pop {
   0% { opacity: 0; transform: scale(0.3) rotate(-45deg); }
   100% { opacity: 1; transform: scale(1) rotate(0deg); }
-}
-
-@keyframes rotate-text {
-  100% { transform: rotate(360deg); }
 }
 
 .dossier-title {
@@ -1822,6 +1814,7 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 
 .dossier-tabs {
   display: flex;
+  flex-wrap: wrap;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--b2);
   border-radius: 8px;
@@ -1830,18 +1823,21 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   gap: 4px;
 }
 .dossier-tab {
-  flex: 1;
+  flex: 1 1 calc(25% - 4px);
+  min-width: 140px;
   background: none;
   border: none;
   color: var(--g2);
   font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  padding: 0.65rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 0.5rem;
   border-radius: 6px;
   cursor: none;
   transition: all 0.3s ease;
   text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
 }
 .dossier-tab.active {
   background: rgba(255, 255, 255, 0.08);
