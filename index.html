@@ -478,10 +478,15 @@
               data-en="A full-featured enterprise freelance marketplace built with Next.js 14, NestJS, Prisma, PostgreSQL, Docker, Kubernetes (k8s), Nginx, and Redis. Features double-entry financial accounting, NOWPayments crypto escrow locks, real-time WebSocket order chat with interactive invoice cards, automated dispute arbitration, risk-scoring fraud detection worker, and granular RBAC administration."
               data-ru="Полнофункциональная enterprise-биржа фриланса на стеке Next.js 14, NestJS, Prisma, PostgreSQL, Docker, Kubernetes (k8s), Nginx и Redis. Включает двухсторонний бухгалтерский регистр, заморозку эскроу-платежей через NOWPayments, чат заказов на WebSocket с инвойс-карточками, автоматический арбитраж споров, сервис антифрод-скоринга и RBAC-админку.">
               A full-featured enterprise freelance marketplace built with Next.js 14, NestJS, Prisma, PostgreSQL, Docker, Kubernetes (k8s), Nginx, and Redis. Features double-entry financial accounting, NOWPayments crypto escrow locks, real-time WebSocket order chat with interactive invoice cards, automated dispute arbitration, risk-scoring fraud detection worker, and granular RBAC administration.</p>
-            <div class="rt-actions" style="margin-top: 1.5rem;">
+            <div class="rt-actions" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
               <button class="btn-dossier" id="btn-open-dossier" data-open-dossier="taskhunt"
-                data-en="View Architecture Dossier" data-ru="Открыть досье">Открыть
-                досье</button>
+                data-en="View Architecture Dossier" data-ru="Открыть досье">Открыть досье</button>
+              <a href="https://t.me/vacbanalert" target="_blank" class="btn-dossier"
+                style="background: rgba(0, 255, 136, 0.12); border-color: rgba(0, 255, 136, 0.35); color: #00ff88; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;"
+                data-en="Request Demo / TG" data-ru="Запросить демо / TG">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 8.01-3.44 3.81-1.58 4.6-1.86 5.12-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.29z"/></svg>
+                Telegram @vacbanalert
+              </a>
             </div>
           </div>
         </div>
@@ -649,9 +654,17 @@
               <span>Next.js 14</span><span>NestJS</span><span>Prisma /
                 Postgres</span><span>NOWPayments</span><span>WebSockets</span><span>Docker</span>
             </div>
-            <button class="btn-dossier" data-open-dossier="taskhunt"
-              style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
-              data-ru="Открыть досье">Открыть досье</button>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+              <button class="btn-dossier" data-open-dossier="taskhunt"
+                style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
+                data-ru="Открыть досье">Открыть досье</button>
+              <a href="https://t.me/vacbanalert" target="_blank" class="btn-dossier"
+                style="background: rgba(0, 255, 136, 0.12); border-color: rgba(0, 255, 136, 0.35); color: #00ff88; text-decoration: none; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 5px;"
+                data-en="Request Demo" data-ru="Запросить демо">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 8.01-3.44 3.81-1.58 4.6-1.86 5.12-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.29z"/></svg>
+                TG @vacbanalert
+              </a>
+            </div>
           </div>
         </div>
 
@@ -660,42 +673,40 @@
           <div class="pc-visual">
             <div class="pc-screen pc-screen-dark" style="background: #0c0814;">
               <div class="pc-code" style="color: #aa66ff;">
-                <span class="code-ln">1</span><span class="code-kw">const</span> app = <span
-                  class="code-fn">fastify</span>({ logger: <span class="code-kw">true</span> });<br>
+                <span class="code-ln">1</span><span class="code-kw">const</span> app = <span class="code-fn">fastify</span>({ logger: <span class="code-kw">true</span> });<br>
                 <span class="code-ln">2</span>app.<span class="code-fn">register</span>(authTelegramPlugin);<br>
-                <span class="code-ln">3</span><span class="code-kw">await</span> ffmpeg.<span
-                  class="code-fn">compressVideo</span>(inputPath, {<br>
+                <span class="code-ln">3</span><span class="code-kw">await</span> ffmpeg.<span class="code-fn">compressVideo</span>(inputPath, {<br>
                 <span class="code-ln">4</span> maxWidth: 1280, faststart: <span class="code-kw">true</span><br>
                 <span class="code-ln">5</span>});<br>
-                <span class="code-ln">6</span>bot.<span class="code-fn">on</span>(<span class="code-str">'start'</span>,
-                (ctx) => ctx.<span class="code-fn">replyWithMiniApp</span>());
+                <span class="code-ln">6</span>bot.<span class="code-fn">on</span>(<span class="code-str">'start'</span>, (ctx) => ctx.<span class="code-fn">replyWithMiniApp</span>());
               </div>
             </div>
           </div>
           <div class="pc-info">
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem;">
-              <img src="assets/anoncreo-logo.png" alt="Anon Creo Logo"
-                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
-              <span class="pc-tag" data-en="Telegram Mini App &amp; Web Platform"
-                data-ru="Telegram Mini App &amp; Платформа">Telegram Mini App &amp; Web Platform</span>
+              <img src="assets/anoncreo-logo.png" alt="Anon Creo Logo" style="height: 26px; width: auto; object-fit: contain;">
+              <span class="pc-tag" data-en="Telegram Mini App &amp; Web Platform" data-ru="Telegram Mini App &amp; Платформа">Telegram Mini App &amp; Web Platform</span>
             </div>
-            <h4 class="pc-title"
-              style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 0.6rem;">
-              Anon Creo Studio</h4>
+            <h4 class="pc-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 0.6rem;">Anon Creo Studio</h4>
             <p class="pc-desc" style="font-size: 0.78rem; color: var(--g2); line-height: 1.7; margin-bottom: 1.2rem;"
               data-en="Telegram Mini App and management platform for creative studios (playables, video, photo, landing pages). Features Fastify 5 API, Telegraf bot, xRocket Pay &amp; NOWPayments crypto invoicing, atomic deposit balance checkouts, deposit-threshold referral tiers, and automated ffmpeg video compression."
               data-ru="Telegram Mini App и платформа управления для студии креативов (плейблы, видео, фото, лендинги). Включает Fastify 5 API, Telegraf бот, крипто-инвойсы xRocket Pay и NOWPayments, атомарную оплату с баланса, накопительную рефералку и сжатие видео через ffmpeg.">
-              Telegram Mini App and management platform for creative studios (playables, video, photo, landing pages).
-              Features Fastify 5 API, Telegraf bot, xRocket Pay &amp; NOWPayments crypto invoicing, atomic deposit
-              balance checkouts, deposit-threshold referral tiers, and automated ffmpeg video compression.
+              Telegram Mini App and management platform for creative studios (playables, video, photo, landing pages). Features Fastify 5 API, Telegraf bot, xRocket Pay &amp; NOWPayments crypto invoicing, atomic deposit balance checkouts, deposit-threshold referral tiers, and automated ffmpeg video compression.
             </p>
             <div class="pc-tech-tags" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span>Telegram WebView</span><span>Fastify 5</span><span>Telegraf / Bot</span><span>Redis /
-                Prisma</span><span>ffmpeg</span><span>xRocket Pay</span>
+              <span>Telegram WebView</span><span>Fastify 5</span><span>Telegraf / Bot</span><span>Redis / Postgres</span><span>ffmpeg</span><span>xRocket Pay</span>
             </div>
-            <button class="btn-dossier" data-open-dossier="anoncreo"
-              style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
-              data-ru="Открыть досье">Открыть досье</button>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+              <button class="btn-dossier" data-open-dossier="anoncreo"
+                style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
+                data-ru="Открыть досье">Открыть досье</button>
+              <a href="https://t.me/AnonCreaoBot" target="_blank" class="btn-dossier"
+                style="background: rgba(170, 102, 255, 0.15); border-color: rgba(170, 102, 255, 0.4); color: #aa66ff; text-decoration: none; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 5px;"
+                data-en="Launch @AnonCreaoBot" data-ru="Запустить @AnonCreaoBot">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 8.01-3.44 3.81-1.58 4.6-1.86 5.12-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.29z"/></svg>
+                Bot @AnonCreaoBot
+              </a>
+            </div>
           </div>
         </div>
 
@@ -704,12 +715,9 @@
           <div class="pc-visual">
             <div class="pc-screen pc-screen-dark" style="background: #120e06;">
               <div class="pc-code" style="color: #ffaa00;">
-                <span class="code-ln">1</span>app.<span class="code-fn">get</span>(<span
-                  class="code-str">'/en/*'</span>, (req, res) => {<br>
-                <span class="code-ln">2</span> <span class="code-kw">const</span> html = <span
-                  class="code-fn">injectSSRMeta</span>(rawHtml, {<br>
-                <span class="code-ln">3</span> lang: <span class="code-str">'en'</span>, title: <span
-                  class="code-str">'Slate Capital'</span><br>
+                <span class="code-ln">1</span>app.<span class="code-fn">get</span>(<span class="code-str">'/en/*'</span>, (req, res) => {<br>
+                <span class="code-ln">2</span> <span class="code-kw">const</span> html = <span class="code-fn">injectSSRMeta</span>(rawHtml, {<br>
+                <span class="code-ln">3</span> lang: <span class="code-str">'en'</span>, title: <span class="code-str">'Slate Capital'</span><br>
                 <span class="code-ln">4</span> });<br>
                 <span class="code-ln">5</span> res.<span class="code-fn">send</span>(html);<br>
                 <span class="code-ln">6</span>}); <span class="code-cm">// LIVE PREVIEW 1-TO-1 MODAL</span>
@@ -718,28 +726,29 @@
           </div>
           <div class="pc-info">
             <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem;">
-              <img src="assets/slate-logo.png" alt="Slate Capital Logo"
-                style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
-              <span class="pc-tag" data-en="Trading Landing &amp; Admin System"
-                data-ru="Трейдинг Платформа &amp; Админка">Trading Landing &amp; Admin System</span>
+              <img src="assets/slate-logo.png" alt="Slate Capital Logo" style="height: 26px; width: auto; object-fit: contain;">
+              <span class="pc-tag" data-en="Trading Landing &amp; Admin System" data-ru="Трейдинг Платформа &amp; Админка">Trading Landing &amp; Admin System</span>
             </div>
-            <h4 class="pc-title"
-              style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 0.6rem;">
-              Slate Capital Platform</h4>
+            <h4 class="pc-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 0.6rem;">Slate Capital Platform</h4>
             <p class="pc-desc" style="font-size: 0.78rem; color: var(--g2); line-height: 1.7; margin-bottom: 1.2rem;"
               data-en="High-end trading landing page with Node.js Express SSR meta injection middleware for crawler-friendly EN/RU link previews in Telegram &amp; Discord, interactive split-screen 1-to-1 live preview admin modal, and Postgres pool."
               data-ru="Премиальная посадочная страница для трейдинга с Express SSR-мидлварью для генерации красивых превью-ссылок (EN/RU) в Telegram/Discord, разделенной 1-в-1 Live Preview админкой и пулом PostgreSQL.">
-              High-end trading landing page with Node.js Express SSR meta injection middleware for crawler-friendly
-              EN/RU link previews in Telegram &amp; Discord, interactive split-screen 1-to-1 live preview admin modal,
-              and Postgres pool.
+              High-end trading landing page with Node.js Express SSR meta injection middleware for crawler-friendly EN/RU link previews in Telegram &amp; Discord, interactive split-screen 1-to-1 live preview admin modal, and Postgres pool.
             </p>
             <div class="pc-tech-tags" style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span>Vanilla JS / CSS</span><span>Node.js / Express</span><span>SSR Meta
-                Injection</span><span>PostgreSQL</span><span>Docker</span><span>Live Preview</span>
+              <span>Vanilla JS / CSS</span><span>Node.js / Express</span><span>SSR Meta Injection</span><span>PostgreSQL</span><span>Docker</span><span>Live Preview</span>
             </div>
-            <button class="btn-dossier" data-open-dossier="slate"
-              style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
-              data-ru="Открыть досье">Открыть досье</button>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center;">
+              <button class="btn-dossier" data-open-dossier="slate"
+                style="display: inline-block; text-align: center; font-size: 0.75rem;" data-en="View Architecture Dossier"
+                data-ru="Открыть досье">Открыть досье</button>
+              <a href="https://t.me/vacbanalert" target="_blank" class="btn-dossier"
+                style="background: rgba(255, 170, 0, 0.15); border-color: rgba(255, 170, 0, 0.4); color: #ffaa00; text-decoration: none; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 5px;"
+                data-en="Live Preview / TG" data-ru="Демо в TG">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 8.01-3.44 3.81-1.58 4.6-1.86 5.12-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.29z"/></svg>
+                TG @vacbanalert
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1061,6 +1070,7 @@
             <span class="d-badge d-blue" style="background: #00ff88; color: #000;" data-en="Stack: Next.js 14 &amp; NestJS" data-ru="Стек: Next.js 14 и NestJS">Stack: Next.js 14 &amp; NestJS</span>
             <span class="d-badge d-gold" style="background: #ffffff; color: #000;" data-en="Engine: Prisma, Postgres, Redis" data-ru="Ядро: Prisma, Postgres, Redis">Engine: Prisma, Postgres, Redis</span>
             <span class="d-badge d-red" style="background: #00f3ff; color: #000;" data-en="Payments: NOWPayments Escrow" data-ru="Оплата: NOWPayments Эскроу">Payments: NOWPayments Escrow</span>
+            <a href="https://t.me/vacbanalert" target="_blank" class="d-badge" style="background: rgba(0, 255, 136, 0.15); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.4); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">🚀 Request Demo (@vacbanalert)</a>
           </div>
 
           <p class="dossier-intro"
@@ -1140,6 +1150,8 @@ const escrow = await this.prisma.$transaction(async (tx) => {
             <span class="d-badge d-blue" style="background: #aa66ff; color: #fff;" data-en="Platform: Telegram Mini App" data-ru="Платформа: Telegram Mini App">Platform: Telegram Mini App</span>
             <span class="d-badge d-gold" style="background: #ffffff; color: #000;" data-en="Backend: Fastify 5 &amp; Telegraf" data-ru="Бэкенд: Fastify 5 &amp; Telegraf">Backend: Fastify 5 &amp; Telegraf</span>
             <span class="d-badge d-red" style="background: #00f3ff; color: #000;" data-en="Payments: xRocket &amp; NOWPayments" data-ru="Оплата: xRocket &amp; NOWPayments">Payments: xRocket &amp; NOWPayments</span>
+            <a href="https://t.me/AnonCreaoBot" target="_blank" class="d-badge" style="background: rgba(170, 102, 255, 0.2); color: #aa66ff; border: 1px solid rgba(170, 102, 255, 0.5); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">🤖 Open TG Bot (@AnonCreaoBot)</a>
+            <a href="https://t.me/AnonCreaoManager" target="_blank" class="d-badge" style="background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">💬 Support (@AnonCreaoManager)</a>
           </div>
 
           <p class="dossier-intro"
@@ -1215,6 +1227,7 @@ fastify.post('/api/auth/telegram', async (req, reply) => {
             <span class="d-badge d-blue" style="background: #ffaa00; color: #000;" data-en="Type: Trading Platform &amp; Admin" data-ru="Тип: Трейдинг Платформа">Type: Trading Platform &amp; Admin</span>
             <span class="d-badge d-gold" style="background: #ffffff; color: #000;" data-en="Design: Dark Gold Glassmorphism" data-ru="Дизайн: Тёмный Золотой Glassmorphism">Design: Dark Gold Glassmorphism</span>
             <span class="d-badge d-red" style="background: #00f3ff; color: #000;" data-en="Stack: Express &amp; PostgreSQL" data-ru="Стек: Express и PostgreSQL">Stack: Express &amp; PostgreSQL</span>
+            <a href="https://t.me/vacbanalert" target="_blank" class="d-badge" style="background: rgba(255, 170, 0, 0.2); color: #ffaa00; border: 1px solid rgba(255, 170, 0, 0.5); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">🔗 Live Platform Demo (@vacbanalert)</a>
           </div>
 
           <p class="dossier-intro"
@@ -1264,6 +1277,7 @@ app.get('/en/*', (req, res) => {
             <span class="d-badge d-blue" data-en="Platform: macOS &amp; Windows" data-ru="Платформа: macOS и Windows">Platform: macOS &amp; Windows</span>
             <span class="d-badge d-gold" data-en="Build: swiftc &amp; Tauri" data-ru="Сборка: swiftc и Tauri">Build: swiftc &amp; Tauri</span>
             <span class="d-badge d-red" data-en="Engine: SwiftUI &amp; Svelte" data-ru="Ядро: SwiftUI и Svelte">Engine: SwiftUI и Svelte</span>
+            <a href="https://github.com/ptrkxlord/aferapokitaysky-player" target="_blank" class="d-badge" style="background: rgba(0, 243, 255, 0.2); color: #00f3ff; border: 1px solid rgba(0, 243, 255, 0.5); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">💻 GitHub Repository</a>
           </div>
 
           <p class="dossier-intro"
