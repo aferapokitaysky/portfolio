@@ -1735,14 +1735,8 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 .dossier-header-sticky {
   padding: 1.5rem 2.5rem;
   border-bottom: 1px solid var(--b2);
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: flex-end; align-items: center;
   background: rgba(14,14,14,.8);
-}
-
-.dossier-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: .65rem; letter-spacing: .2em; color: #ff3333;
-  text-transform: uppercase;
 }
 
 #dossier-close {
@@ -1803,14 +1797,130 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 .dossier-intro { font-size: .85rem; color: var(--g2); line-height: 1.8; }
 .dossier-hr { border: none; border-top: 1px dashed var(--b2); margin: 2rem 0; }
 
-.dossier-h3 { font-family: 'DM Mono', monospace; font-size: .95rem; color: var(--white); margin-bottom: 1rem; margin-top: 1.5rem; letter-spacing: .05em; }
+/* Architecture blueprint diagram — custom SVG canvas per project */
+.dossier-diagram-wrap {
+  position: relative;
+  margin: 1.8rem 0 .5rem;
+  border: 1px solid var(--b2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(10,10,10,.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: inset 0 1px 0 var(--hl), inset 0 0 40px rgba(0,0,0,.35);
+}
+.dossier-diagram-wrap::before {
+  content: attr(data-caption);
+  position: absolute; top: 10px; left: 14px;
+  font-family: 'DM Mono', monospace; font-size: .58rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--g3); z-index: 2;
+}
+.dossier-diagram-wrap::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, transparent 30%);
+}
+.dossier-diagram-wrap svg { display: block; width: 100%; height: auto; position: relative; z-index: 1; }
+.dossier-diagram-wrap .dflow-line { stroke-dasharray: 4 3; animation: dflow 1.4s linear infinite; }
+.dossier-diagram-wrap rect[stroke] { animation: node-breathe 4s ease-in-out infinite; }
+@keyframes dflow { to { stroke-dashoffset: -14; } }
+@keyframes node-breathe { 0%,100% { stroke-opacity: .75; } 50% { stroke-opacity: 1; } }
+
+/* Section headers — custom icon badge + index number, no stock icon glyphs */
+.dossier-h3 {
+  display: flex; align-items: center; gap: .85rem;
+  font-family: 'DM Mono', monospace; font-size: .92rem; color: var(--white);
+  margin-bottom: 1.1rem; margin-top: 2.4rem; letter-spacing: .03em;
+}
+.dossier-h3-badge {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--accent, #fff) 14%, rgba(255,255,255,.03));
+  border: 1px solid color-mix(in srgb, var(--accent, #fff) 38%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 4px 14px -6px color-mix(in srgb, var(--accent, #fff) 55%, transparent);
+  transition: transform .25s ease;
+}
+.dossier-h3:hover .dossier-h3-badge { transform: translateY(-2px) scale(1.04); }
+.dossier-h3-badge svg { width: 19px; height: 19px; }
+.dossier-h3-index {
+  font-size: .62rem; color: var(--g3); letter-spacing: .1em; flex-shrink: 0;
+}
+.dossier-h3-text { flex: 1; }
+
 .dossier-body p { font-size: .8rem; color: var(--g2); line-height: 1.8; margin-bottom: 1rem; }
-.dossier-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
-.dossier-list li { position: relative; padding-left: 1.5rem; font-size: .8rem; color: var(--g2); line-height: 1.7; }
-.dossier-list li::before { content: '>'; position: absolute; left: 0; color: #ff5555; font-family: 'DM Mono', monospace; }
+
+/* Spec cards — replace the plain ">" bullet list with liquid-glass accent cards */
+.dossier-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .9rem; margin-bottom: .2rem; }
+.dossier-list li {
+  position: relative; padding: .95rem 1.1rem .95rem 2.3rem;
+  font-size: .8rem; color: var(--g2); line-height: 1.7;
+  background: rgba(255,255,255,.03);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--b1);
+  border-left: 2px solid var(--accent, #ff5555);
+  border-radius: 4px 10px 10px 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+  transition: background .25s ease, transform .25s ease;
+}
+.dossier-list li:hover { background: rgba(255,255,255,.055); transform: translateX(2px); }
+.dossier-list li::before {
+  content: ''; position: absolute; left: 1rem; top: 1.25rem;
+  width: 7px; height: 7px;
+  background: var(--accent, #ff5555);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent, #ff5555) 70%, transparent);
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
 .dossier-list strong { color: var(--white); font-weight: 500; }
 
-.dossier-code { background: #0c0c0c; border: 1px solid var(--b2); border-radius: 6px; padding: 1rem; font-family: 'DM Mono', monospace; font-size: .75rem; color: #a1d279; line-height: 1.6; overflow-x: auto; margin-top: 1rem; }
+/* Code block — faux editor chrome instead of a bare <pre> */
+.dossier-code-wrap {
+  border: 1px solid var(--b2); border-radius: 8px; overflow: hidden;
+  margin-top: 1.3rem; background: rgba(12,12,12,.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 var(--hl);
+}
+.dossier-code-dots { display: flex; align-items: center; gap: 6px; padding: .65rem .85rem; border-bottom: 1px solid var(--b1); background: rgba(255,255,255,.02); }
+.dossier-code-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--b3); }
+.dossier-code-dots span:nth-child(1) { background: #ff5f56; }
+.dossier-code-dots span:nth-child(2) { background: #ffbd2e; }
+.dossier-code-dots span:nth-child(3) { background: #27c93f; }
+.dossier-code-dots small { margin-left: .5rem; font-family: 'DM Mono', monospace; font-size: .6rem; color: var(--g3); letter-spacing: .1em; }
+.dossier-code-wrap .dossier-code { border: none; margin-top: 0; border-radius: 0; background: transparent; }
+.dossier-code { background: #0c0c0c; padding: 1rem; font-family: 'DM Mono', monospace; font-size: .75rem; color: #a1d279; line-height: 1.6; overflow-x: auto; }
+
+/* Bottom action row — real visible link buttons, no emoji, no tiny badges */
+.dossier-actions {
+  display: flex; flex-wrap: wrap; gap: .8rem;
+  margin-top: 2.6rem; padding-top: 1.8rem;
+  border-top: 1px solid var(--b2);
+}
+.dossier-link-btn {
+  position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .75rem 1.2rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .06em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--accent, var(--white));
+  background: color-mix(in srgb, var(--accent, #fff) 10%, transparent);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid color-mix(in srgb, var(--accent, #fff) 45%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+.dossier-link-btn:hover {
+  background: color-mix(in srgb, var(--accent, #fff) 22%, transparent);
+  border-color: var(--accent, var(--white));
+  transform: translateY(-2px);
+}
+.dossier-link-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
 
 .dossier-tabs {
   display: flex;
@@ -1838,7 +1948,10 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
+  display: flex; align-items: center; justify-content: center; gap: .45rem;
 }
+.dossier-tab-dot { width: 6px; height: 6px; border-radius: 50%; opacity: .5; transition: opacity .25s, box-shadow .25s; flex-shrink: 0; }
+.dossier-tab.active .dossier-tab-dot { opacity: 1; box-shadow: 0 0 7px currentColor; }
 .dossier-tab.active {
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);
