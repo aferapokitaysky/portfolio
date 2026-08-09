@@ -130,7 +130,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Inter:wght@300;400;500;700&amp;family=DM+Mono:wght@300;400;500&amp;display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="style.css?v=1.0.5" />
+  <link rel="stylesheet" href="style.css?v=1.0.6" />
   <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RT5NX81R4D"></script>
@@ -482,39 +482,67 @@
               <div class="rt-term-dots">
                 <span></span><span></span><span></span>
               </div>
-              <span class="rt-term-title">taskhunt.app/apps/api/src/modules/escrow/escrow.service.ts</span>
+              <span class="rt-term-title">TaskHunt production control surface</span>
             </div>
             <div class="rt-term-body">
-              <div class="rt-line"><span class="rt-prompt">~</span> <span class="rt-cmd">pnpm dev --filter @taskhunt/api @taskhunt/web</span>
+              <div class="th-panel-head">
+                <div>
+                  <span class="th-kicker">Live System Snapshot</span>
+                  <h3>Escrow, ledger and order operations</h3>
+                </div>
+                <div class="th-health">
+                  <span></span>
+                  <strong>Production Ready</strong>
+                </div>
               </div>
-              <div class="rt-line" style="color: #00f3ff;">T A S K H U N T  E N T E R P R I S E  M A R K E T P L A C E</div>
-              <div class="rt-line"><span class="rt-ok">[+]</span> Connecting PostgreSQL Cluster &amp; Redis BullMQ via Prisma...</div>
-              <div class="rt-line"><span class="rt-ok">[+]</span> Initializing Double-Entry Ledger Engine... <span class="rt-hl">Ledger Verified</span></div>
-              <div class="rt-line"><span class="rt-ok">[+]</span> NOWPayments Crypto Gateway: Listening to IPN webhooks &amp; escrow locks...</div>
-              <div class="rt-line"><span class="rt-ok">[+]</span> WebSocket Server &amp; Nginx SSL Ingress: Online</div>
-              <div class="rt-line"><span class="rt-ok">[+]</span> Kubernetes (k8s) &amp; Docker Microservice Pods: <span class="rt-hl">Fraud Score Worker</span> | <span class="rt-hl">Notifications Worker</span></div>
-              <div class="rt-line"><span class="rt-prompt">System Health:</span> <span class="rt-hl">100% Operational | TurboRepo Workspace Ready</span></div>
-              <div class="rt-line"
-                style="color: #00f3ff; opacity: 0.95; display: flex; align-items: center; gap: 4px; height: 16px; margin: 4px 0;">
-                <span>▕</span>
-                <span class="visualizer-container"
-                  style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; width: 85px; padding: 0 4px; overflow: hidden;">
-                  <span class="v-bar" style="width: 4px; height: 40%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 80%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 50%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 30%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 70%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 90%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 60%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 45%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 85%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 55%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 35%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                  <span class="v-bar" style="width: 4px; height: 75%; background: #00f3ff; transition: height 0.1s ease-in-out; border-radius: 1px;"></span>
-                </span>
-                <span>▏ [DOUBLE-ENTRY ESCROW &amp; K8S ACTIVE]</span>
+
+              <div class="th-ops-grid">
+                <div class="th-ledger-card">
+                  <div class="th-card-label">Escrow ledger</div>
+                  <div class="th-balance-row">
+                    <span>System hold</span>
+                    <strong>$24,860.00</strong>
+                  </div>
+                  <div class="th-ledger-list">
+                    <div><span>Client wallet</span><strong>- $780.00</strong></div>
+                    <div><span>Escrow vault</span><strong>+ $780.00</strong></div>
+                    <div><span>Platform fee</span><strong>queued</strong></div>
+                  </div>
+                </div>
+
+                <div class="th-service-card">
+                  <div class="th-card-label">Core services</div>
+                  <div class="th-service-list">
+                    <span><i></i> Postgres / Prisma</span>
+                    <span><i></i> Redis queues</span>
+                    <span><i></i> WebSocket gateway</span>
+                    <span><i></i> Fraud scoring</span>
+                  </div>
+                </div>
               </div>
-              <div class="rt-line rt-cursor"><span class="rt-prompt">&gt;</span> <span class="rt-blink">_</span></div>
+
+              <div class="th-order-flow">
+                <div class="th-flow-step active">
+                  <span>01</span>
+                  <strong>Order placed</strong>
+                  <small>scope and budget locked</small>
+                </div>
+                <div class="th-flow-step active">
+                  <span>02</span>
+                  <strong>Escrow secured</strong>
+                  <small>NOWPayments confirmed</small>
+                </div>
+                <div class="th-flow-step">
+                  <span>03</span>
+                  <strong>Workroom live</strong>
+                  <small>chat, files, invoices</small>
+                </div>
+                <div class="th-flow-step">
+                  <span>04</span>
+                  <strong>Release ready</strong>
+                  <small>milestone approval</small>
+                </div>
+              </div>
             </div>
           </div>
           <div class="rt-hero-info">
