@@ -161,7 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── Stats Counter Animation ─── */
   gsap.utils.toArray('.stat-num').forEach(stat => {
-    const target = parseInt(stat.dataset.target, 10);
+    const target = parseFloat(stat.dataset.target);
+    const decimals = (stat.dataset.target.split('.')[1] || '').length;
     const obj = { val: 0 };
 
     gsap.to(obj, {
@@ -174,10 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 1.8,
       ease: "power2.out",
       onUpdate: () => {
-        stat.textContent = Math.floor(obj.val);
+        stat.textContent = obj.val.toFixed(decimals);
       },
       onComplete: () => {
-        stat.textContent = target;
+        stat.textContent = target.toFixed(decimals);
       }
     });
   });

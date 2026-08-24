@@ -1679,6 +1679,12 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
     linear-gradient(145deg, #12091c, #070708);
 }
 
+.player-stage {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,136,0,.16), transparent 36%),
+    linear-gradient(145deg, #1c1006, #070708);
+}
+
 .project-card-shoeven {
   border-color: rgba(218,177,132,.13);
   background:
@@ -1745,6 +1751,45 @@ body.hovering .cursor-ring { width: 50px; height: 50px; border-color: rgba(255,2
 
 .pc-tech-tags span:hover {
   color: var(--white); border-color: var(--b3);
+}
+
+/* ─── Project cards: big screenshot, side-by-side ─── */
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .projects-grid .project-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .projects-grid .project-card:nth-child(even) .pc-visual { order: 2; }
+  .projects-grid .project-card:nth-child(even) .pc-info { order: 1; }
+
+  .projects-grid .pc-visual { padding: 0; height: 100%; }
+
+  .projects-grid .pc-image-stage,
+  .projects-grid .pc-logo-stage {
+    height: 100%;
+    min-height: 340px;
+    aspect-ratio: auto;
+    border-radius: var(--rl) 0 0 var(--rl);
+  }
+
+  .projects-grid .project-card:nth-child(even) .pc-image-stage,
+  .projects-grid .project-card:nth-child(even) .pc-logo-stage {
+    border-radius: 0 var(--rl) var(--rl) 0;
+  }
+
+  .projects-grid .pc-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 3.2rem;
+  }
 }
 
 .dossier-visual-hero {
