@@ -134,32 +134,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const langButton = document.getElementById('lang');
+  const langButtons = [...document.querySelectorAll('#lang-switch button')];
   let language = localStorage.getItem('portfolio-language') || 'en';
   const applyLanguage = (nextLanguage) => {
     language = nextLanguage;
     document.documentElement.lang = language;
-    document.querySelectorAll('[data-en][data-ru]').forEach((element) => {
-      element.textContent = element.dataset[language];
+    document.querySelectorAll('[data-en]').forEach((element) => {
+      element.textContent = element.dataset[language] || element.dataset.en;
     });
-    langButton.textContent = language === 'en' ? 'RU' : 'EN';
+    langButtons.forEach((button) => button.classList.toggle('active', button.dataset.lang === language));
     localStorage.setItem('portfolio-language', language);
   };
   applyLanguage(language);
-  langButton.addEventListener('click', () => applyLanguage(language === 'en' ? 'ru' : 'en'));
+  langButtons.forEach((button) => button.addEventListener('click', () => applyLanguage(button.dataset.lang)));
 
+  const copyLabel = { en: ['Copy', 'Copied'], ru: ['Копировать', 'Скопировано'], uk: ['Копіювати', 'Скопійовано'] };
   const discordButton = document.getElementById('copy-discord');
   discordButton.addEventListener('click', async () => {
     const label = discordButton.querySelector('i');
     try {
       await navigator.clipboard.writeText('office.cia.gov');
-      label.textContent = language === 'en' ? 'Copied' : 'Скопировано';
+      label.textContent = copyLabel[language][1];
     } catch {
       label.textContent = 'office.cia.gov';
     }
-    window.setTimeout(() => { label.textContent = language === 'en' ? 'Copy' : 'Копировать'; }, 1800);
+    window.setTimeout(() => { label.textContent = copyLabel[language][0]; }, 1800);
   });
 
+  const noDescription = { en: 'No description.', ru: 'Без описания.', uk: 'Без опису.' };
+  const githubUnavailable = { en: 'GitHub data is unavailable right now.', ru: 'Данные GitHub сейчас недоступны.', uk: 'Дані GitHub зараз недоступні.' };
   const fetchGitHub = async () => {
     const repoList = document.getElementById('repo-list');
     try {
@@ -180,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.createElement('h3');
         title.textContent = repo.name;
         const description = document.createElement('p');
-        description.textContent = repo.description || (language === 'en' ? 'No description.' : 'Без описания.');
+        description.textContent = repo.description || noDescription[language];
         const meta = document.createElement('div');
         meta.className = 'repo-meta';
         meta.textContent = `${repo.language || 'Code'}   ★ ${repo.stargazers_count}   ⑂ ${repo.forks_count}`;
@@ -188,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         repoList.appendChild(card);
       });
     } catch (error) {
-      repoList.innerHTML = `<p class="repo-loading">${language === 'en' ? 'GitHub data is unavailable right now.' : 'Данные GitHub сейчас недоступны.'}</p>`;
+      repoList.innerHTML = `<p class="repo-loading">${githubUnavailable[language]}</p>`;
       console.warn(error.message);
     }
   };
