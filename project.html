@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Project — ptrkxlord</title>
+  <meta name="description" content="Project details by ptrkxlord.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f2f1ed">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="project.css?v=1.1.3">
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+</head>
+<body>
+  <div class="case-progress" id="case-progress" aria-hidden="true"></div>
+  <div class="case-noise" aria-hidden="true"></div>
+  <div class="case-cursor" id="case-cursor" aria-hidden="true"><span class="case-cursor-dot"></span><span class="case-cursor-ring"></span><span class="case-cursor-label"></span></div>
+
+  <header class="case-header">
+    <a class="case-wordmark" href="index.html#top" aria-label="Back to home" data-cursor="Top"><span>PK</span><b>PTRKXLORD</b></a>
+    <a class="case-back" href="index.html#work" data-cursor="Projects"><span aria-hidden="true">←</span><span data-copy="back">Projects</span></a>
+    <div class="case-header-actions">
+      <button class="case-lang" id="case-lang" type="button" aria-label="Switch language" data-cursor="Lang">RU</button>
+      <a class="case-live" id="case-live" href="#" target="_blank" rel="noopener" data-cursor="Open"><span data-copy="open">Open site</span> ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero">
+      <div class="case-index"><span id="case-type">PROJECT</span><b id="case-year">2025</b></div>
+      <div class="case-heading">
+        <p class="case-kicker" data-copy="projectFile">Project file</p>
+        <h1 id="case-title">Project</h1>
+        <p class="case-summary" id="case-summary"></p>
+        <div class="case-actions" id="case-actions"></div>
+      </div>
+      <div class="case-mark" id="case-mark" aria-hidden="true"></div>
+    </section>
+
+    <section class="case-visual-wrap">
+      <figure class="case-visual" id="case-visual"><img id="case-image" src="assets/taskhunt-og.jpg" alt=""></figure>
+      <dl class="case-facts">
+        <div><dt data-copy="role">Role</dt><dd id="case-role"></dd></div>
+        <div><dt data-copy="scope">Scope</dt><dd id="case-scope"></dd></div>
+        <div><dt data-copy="status">Status</dt><dd id="case-status"></dd></div>
+      </dl>
+    </section>
+
+    <section class="case-section case-story">
+      <div class="case-section-label"><span data-copy="inside">Inside the project</span><i></i></div>
+      <div class="case-story-copy">
+        <p class="case-kicker" data-copy="task">The task</p>
+        <h2 id="case-problem-title"></h2>
+        <p id="case-problem-body"></p>
+      </div>
+      <div class="case-built">
+        <p class="case-kicker" data-copy="built">What I built</p>
+        <ol id="case-built-list"></ol>
+      </div>
+    </section>
+
+    <section class="case-section case-technology">
+      <div class="case-section-label"><span data-copy="technology">Technology</span><i></i></div>
+      <div class="case-tech-heading">
+        <h2 data-copy="stackHeading">Tools used in this project.</h2>
+        <p data-copy="stackBody">Only the technologies that had a clear job in the product.</p>
+      </div>
+      <div class="case-tech-grid" id="case-tech-grid"></div>
+    </section>
+
+    <section class="case-section case-notes">
+      <div class="case-section-label"><span data-copy="notes">Implementation notes</span><i></i></div>
+      <div class="case-note-grid" id="case-note-grid"></div>
+    </section>
+
+    <nav class="case-next" aria-label="Next project">
+      <div class="case-next-head"><span data-copy="next">Next project</span><span class="case-next-count" id="case-next-count"></span></div>
+      <a id="case-next-link" href="#" data-cursor="Next">
+        <b id="case-next-title"></b>
+        <span class="case-next-thumb"><img id="case-next-image" src="" alt=""></span>
+        <i>↗</i>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="case-footer"><span>© <span id="case-year-current"></span> ptrkxlord</span><a href="index.html#contact" data-copy="contact" data-cursor="Contact">Contact</a></footer>
+  <script src="project.js?v=1.1.4"></script>
+</body>
+</html>
