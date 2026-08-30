@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextImage = byId('case-next-image');
     nextImage.src = nextProject.image;
     nextImage.alt = `${nextProject.title} preview`;
+    nextImage.closest('.case-next-thumb').className = `case-next-thumb ${nextProject.visualClass}`;
   };
 
   const createLink = (href, label, className, cursorLabel) => {
