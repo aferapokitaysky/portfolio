@@ -159,8 +159,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const render = () => {
     document.documentElement.lang = language;
-    document.title = `${project.title} — ptrkxlord`;
+    const pageTitle = `${project.title} — ptrkxlord`;
+    const pageUrl = `https://portfolio.aferapokitaysky.app/project.html?project=${key}`;
+    const pageImage = `https://portfolio.aferapokitaysky.app/${project.image}`;
+    document.title = pageTitle;
     document.querySelector('meta[name="description"]').content = pick(project.summary);
+    byId('canonical-link').href = pageUrl;
+    byId('og-title').content = pageTitle;
+    byId('og-description').content = pick(project.summary);
+    byId('og-image').content = pageImage;
+    byId('og-url').content = pageUrl;
+    byId('twitter-title').content = pageTitle;
+    byId('twitter-description').content = pick(project.summary);
+    byId('twitter-image').content = pageImage;
+    byId('project-jsonld').textContent = JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'CreativeWork', name: project.title, description: pick(project.summary),
+      url: pageUrl, image: pageImage, author: { '@type': 'Person', name: 'ptrkxlord', url: 'https://portfolio.aferapokitaysky.app/' }
+    });
     document.querySelectorAll('[data-copy]').forEach((element) => { element.textContent = pick(copy[element.dataset.copy]); });
     langButtons.forEach((button) => button.classList.toggle('active', button.dataset.lang === language));
     byId('case-title').textContent = project.title;
