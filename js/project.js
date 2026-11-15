@@ -21,14 +21,19 @@ const technologyIcons = {
   'AppKit': 'devicon-apple-original',
   'Tauri': 'devicon-tauri-plain colored',
   'Svelte': 'devicon-svelte-plain colored',
-  'ffmpeg': { img: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ffmpeg.svg', alt: 'FFmpeg logo' }
+  'ffmpeg': { img: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ffmpeg.svg', alt: 'FFmpeg logo' },
+  '.NET': 'devicon-dotnetcore-plain colored',
+  'ASP.NET Core': 'devicon-dotnetcore-plain colored',
+  'SQLite': 'devicon-sqlite-plain colored',
+  'C#': { img: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/csharp.svg', alt: 'C# logo' },
+  'Google OAuth': { img: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/google.svg', alt: 'Google logo' }
 };
 
 const projects = {
   taskhunt: {
     title: 'TaskHunt', type: 'MARKETPLACE', year: '2025', image: 'assets/taskhunt-og.jpg', visualClass: 'taskhunt',
     liveUrl: 'https://taskhunt.lol', repoUrl: 'https://github.com/aferapokitaysky/taskhuntweb', next: 'sho-events',
-    summary: localized('A freelance marketplace where clients and freelancers share one flow for orders, milestones, chat and NOWPayments crypto escrow.', 'Фриланс-платформа, где заказчик и фрилансер работают в одном потоке: заказы, этапы, чат и крипто-эскроу через NOWPayments.', 'Фриланс-платформа, де замовник і фрилансер працюють в одному потоці: замовлення, етапи, чат і крипто-ескроу через NOWPayments.'),
+    summary: localized('Clients and freelancers manage orders, milestones, file handoff, chat and NOWPayments escrow in one place. The platform also includes payment tracking and tools for handling disputes.', 'Фриланс-платформа, где заказчик и фрилансер работают в одном потоке: заказы, этапы, чат и крипто-эскроу через NOWPayments.', 'Фриланс-платформа, де замовник і фрилансер працюють в одному потоці: замовлення, етапи, чат і крипто-ескроу через NOWPayments.'),
     role: localized('Full-stack: client, API, data and deployment', 'Full-stack: клиент, API, данные и деплой', 'Full-stack: клієнт, API, дані та деплой'),
     scope: localized('Web app / admin / payment flow', 'Веб-приложение / админка / платежи', 'Веб-застосунок / адмінка / платежі'),
     status: localized('Public project', 'Публичный проект', 'Публічний проєкт'),
@@ -51,7 +56,7 @@ const projects = {
   'sho-events': {
     title: 'SHO Events', type: 'EVENT WEBSITE', year: '2025', image: 'assets/shoeven-og.jpg', visualClass: 'sho',
     liveUrl: 'https://shoevents.org', repoUrl: 'https://github.com/aferapokitaysky/sho-events', next: 'anonymous-creo',
-    summary: localized('A multilingual website for a premium event agency, with its own SVG icon set and a small API for lead delivery.', 'Мультиязычный сайт премиального event-агентства с собственным набором SVG-иконок и небольшим API для доставки заявок.', 'Багатомовний сайт преміального event-агентства з власним набором SVG-іконок і невеликим API для доставки заявок.'),
+    summary: localized('A three-language website for a Bratislava event agency. It has separate pages for services and event formats, plus a contact API that delivers enquiries to the team.', 'Мультиязычный сайт премиального event-агентства с собственным набором SVG-иконок и небольшим API для доставки заявок.', 'Багатомовний сайт преміального event-агентства з власним набором SVG-іконок і невеликим API для доставки заявок.'),
     role: localized('Frontend, forms API and deployment', 'Фронтенд, API форм и деплой', 'Фронтенд, API форм і деплой'),
     scope: localized('Website / lead delivery / i18n', 'Сайт / доставка заявок / локализация', 'Сайт / доставка заявок / локалізація'),
     status: localized('Live website', 'Сайт запущен', 'Сайт запущено'),
@@ -73,7 +78,7 @@ const projects = {
   'anonymous-creo': {
     title: 'Anonymous Creo', type: 'TELEGRAM MINI APP', year: '2025', image: 'assets/anoncreo-logo.png', visualClass: 'creo',
     liveUrl: 'https://t.me/anoncreo_bot', repoUrl: null, next: 'slate-capital',
-    summary: localized('A Telegram Mini App that produces ad creatives on demand for traffic-arbitrage teams — order, pay and download inside one bot.', 'Telegram Mini App для продакшена рекламных креативов под арбитраж трафика — заказ, оплата и выдача материалов в одном боте.', 'Telegram Mini App, який виробляє рекламні креативи на замовлення для команд арбітражу трафіку — замовлення, оплата та видача матеріалів в одному боті.'),
+    summary: localized('A Telegram Mini App for ordering advertising images and short videos. Customers place a brief, pay from their balance and follow the job; managers work from a separate order queue.', 'Telegram Mini App для продакшена рекламных креативов под арбитраж трафика — заказ, оплата и выдача материалов в одном боте.', 'Telegram Mini App, який виробляє рекламні креативи на замовлення для команд арбітражу трафіку — замовлення, оплата та видача матеріалів в одному боті.'),
     role: localized('Full-stack Mini App development', 'Full-stack разработка Mini App', 'Full-stack розробка Mini App'),
     scope: localized('Telegram / creative orders / admin', 'Telegram / заказы на креативы / админка', 'Telegram / замовлення на креативи / адмінка'),
     status: localized('Live Telegram bot', 'Работает в Telegram', 'Працює в Telegram'),
@@ -96,7 +101,7 @@ const projects = {
   'slate-capital': {
     title: 'Slate Capital', type: 'FINANCE WEBSITE', year: '2025', image: 'assets/slate-og.png', visualClass: 'slate',
     liveUrl: 'https://slate-capital.com', repoUrl: 'https://github.com/aferapokitaysky/slate-capital-site', next: 'player',
-    summary: localized('A trading-education landing page with an admin control room, a 1:1 live preview and per-language link previews for messengers and search engines.', 'Лендинг для обучения трейдингу с админ-панелью, live preview 1-в-1 и корректными превью ссылок для мессенджеров и поисковиков на каждом языке.', 'Лендинг для навчання трейдингу з адмін-панеллю, live preview 1-в-1 і коректними прев’ю посилань для месенджерів і пошукових систем на кожній мові.'),
+    summary: localized('A bilingual trading-education website with an admin for updating offer cards. Editors can preview changes before publishing, and shared links get the right title and image for each language.', 'Лендинг для обучения трейдингу с админ-панелью, live preview 1-в-1 и корректными превью ссылок для мессенджеров и поисковиков на каждом языке.', 'Лендинг для навчання трейдингу з адмін-панеллю, live preview 1-в-1 і коректними прев’ю посилань для месенджерів і пошукових систем на кожній мові.'),
     role: localized('Website, admin panel, API and deployment', 'Сайт, админка, API и деплой', 'Сайт, адмінка, API і деплой'),
     scope: localized('Content / SEO / admin', 'Контент / SEO / админка', 'Контент / SEO / адмінка'),
     status: localized('Live website', 'Сайт запущен', 'Сайт запущено'),
@@ -117,9 +122,9 @@ const projects = {
     ]
   },
   player: {
-    title: 'Aferapokitaysky Player', type: 'DESKTOP APPLICATION', year: '2024–25', image: 'assets/logo.png', visualClass: 'player',
+    title: 'Aferapokitaysky Player', type: 'DESKTOP APPLICATION', year: '2024–26', image: 'assets/logo.png', visualClass: 'player',
     liveUrl: 'https://aferapokitaysky.app', repoUrl: 'https://github.com/aferapokitaysky/music-player', next: 'taskhunt',
-    summary: localized('A native, glassmorphic macOS media player with a notch mini-player and a terminal UI, plus an experimental Windows interface built with Tauri.', 'Нативный медиаплеер для macOS в стиле glassmorphism с мини-плеером под вырезом экрана и терминальным режимом, плюс экспериментальный Windows-интерфейс на Tauri.', 'Нативний медіаплеєр для macOS у стилі glassmorphism з міні-плеєром під вирізом екрана і терміналним режимом, плюс експериментальний Windows-інтерфейс на Tauri.'),
+    summary: localized('A native music player for macOS with a compact notch mini-player, media keys and terminal controls. The Windows interface is a separate Tauri prototype.', 'Нативный медиаплеер для macOS в стиле glassmorphism с мини-плеером под вырезом экрана и терминальным режимом, плюс экспериментальный Windows-интерфейс на Tauri.', 'Нативний медіаплеєр для macOS у стилі glassmorphism з міні-плеєром під вирізом екрана і терміналним режимом, плюс експериментальний Windows-інтерфейс на Tauri.'),
     role: localized('Desktop UI, native integration and builds', 'Desktop UI, нативная интеграция и сборка', 'Desktop UI, нативна інтеграція та збірка'),
     scope: localized('macOS / Windows prototype', 'macOS / прототип Windows', 'macOS / прототип Windows'),
     status: localized('macOS app / Windows in progress', 'macOS-приложение / Windows в работе', 'macOS-застосунок / Windows у роботі'),
@@ -138,7 +143,31 @@ const projects = {
       { label: 'BUILD', title: localized('The macOS build can run without Xcode', 'Сборка macOS не требует Xcode', 'Збірка macOS не потребує Xcode'), body: localized('A shell script discovers Swift sources and compiles the application with the command-line Swift toolchain.', 'Shell-скрипт находит Swift-файлы и собирает приложение через консольный Swift toolchain.', 'Shell-скрипт знаходить Swift-файли та збирає застосунок через консольний Swift toolchain.') },
       { label: 'WINDOWS', title: localized('Prototype status is explicit', 'Статус прототипа указан прямо', 'Статус прототипу вказано прямо'), body: localized('The Tauri branch mirrors the interface, but audio decoding and real frequency data are not presented as finished.', 'Ветка на Tauri повторяет интерфейс, но декодирование аудио и реальные данные частот не выдаются за готовую функцию.', 'Гілка на Tauri повторює інтерфейс, але декодування аудіо та реальні дані частот не видаються за готову функцію.') }
     ]
-  }
+  },
+  'kpk-alert': {
+    title: 'KGTA Alert', type: localized('CAMPUS ALERT SYSTEM', 'СИСТЕМА ОПОВЕЩЕНИЯ', 'СИСТЕМА ОПОВІЩЕННЯ'), year: '2025–26', image: 'assets/kpk-logo-512.png', visualClass: 'alert', logo: 'assets/kpk-logo-512.png',
+    liveUrl: null, repoUrl: 'https://github.com/aferapokitaysky/kpk-alert', next: 'taskhunt', internal: true,
+    summary: localized('An announcement system for Kremenchuk College. Operators send messages to each building; Windows services beside the audio equipment report when a command arrives and playback starts.', 'Система оповещения для Кременчугского колледжа. Оператор отправляет объявление в нужный корпус, а Windows-служба рядом с аудиооборудованием подтверждает получение команды и начало воспроизведения.', 'Система оповіщення для Кременчуцького коледжу. Оператор надсилає оголошення до потрібного корпусу, а Windows-служба біля аудіообладнання підтверджує отримання команди й початок відтворення.'),
+    role: localized('Full-stack system development', 'Разработка системы целиком', 'Розробка системи повного циклу'),
+    scope: localized('Operator PWA / API / Windows service', 'Пульт оператора / API / Windows-служба', 'Пульт оператора / API / Windows-служба'),
+    status: localized('Internal campus system', 'Внутренняя система колледжа', 'Внутрішня система коледжу'),
+    problemTitle: localized('Send each announcement to the right building and confirm it played.', 'Доставить объявление в нужный корпус и убедиться, что оно прозвучало.', 'Доставити оголошення до потрібного корпусу й переконатися, що воно пролунало.'),
+    problemBody: localized('A server accepting a command does not mean that a speaker played it. The system keeps those steps separate: the operator can see when a command is accepted, delivered to a building and acknowledged by its audio node.', 'Принятие команды сервером ещё не означает, что она прозвучала. Система показывает каждый этап отдельно: команда принята, доставлена в корпус, аудиоузел подтвердил воспроизведение.', 'Прийняття команди сервером ще не означає, що вона пролунала. Система показує кожен етап окремо: команду прийнято, доставлено до корпусу, аудіовузол підтвердив відтворення.'),
+    built: [
+      localized('An operator PWA for choosing a building, starting an approved scenario and reviewing delivery history.', 'Операторская PWA для выбора корпуса, запуска разрешённого сценария и просмотра истории доставки.', 'Операторська PWA для вибору корпусу, запуску дозволеного сценарію та перегляду історії доставки.'),
+      localized('An ASP.NET Core API for user sessions, roles, locations, scenarios, commands and audit events.', 'API на ASP.NET Core для сессий пользователей, ролей, корпусов, сценариев, команд и аудита.', 'API на ASP.NET Core для сесій користувачів, ролей, корпусів, сценаріїв, команд і аудиту.'),
+      localized('A Windows service at each audio node, connected to the local speakers and storing its operational state in SQLite.', 'Windows-служба на каждом аудиоузле, подключённая к местным колонкам и хранящая состояние в SQLite.', 'Windows-служба на кожному аудіовузлі, підключена до місцевих гучномовців і зберігає стан у SQLite.'),
+      localized('A delivery flow that distinguishes server acceptance, receipt by the device and playback acknowledgement.', 'Статусы отдельно показывают принятие команды сервером, получение устройством и подтверждение воспроизведения.', 'Статуси окремо показують прийняття команди сервером, отримання пристроєм і підтвердження відтворення.'),
+      localized('PostgreSQL for shared system data, plus an audit log for operator and device activity.', 'PostgreSQL для общих данных системы и журнал действий операторов и устройств.', 'PostgreSQL для спільних даних системи та журнал дій операторів і пристроїв.')
+    ],
+    tech: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'PostgreSQL', 'SQLite', 'Docker', 'Google OAuth'],
+    notes: [
+      { label: localized('DELIVERY', 'ДОСТАВКА', 'ДОСТАВКА'), title: localized('A sent command is not a played announcement', 'Отправленная команда — ещё не объявление', 'Надіслана команда — це ще не оголошення'), body: localized('The operator sees separate server, device and playback states. If the audio node does not acknowledge playback, the command remains unconfirmed.', 'Пульт отдельно показывает статус сервера, устройства и воспроизведения. Без подтверждения аудиоузла команда остаётся неподтверждённой.', 'Пульт окремо показує статус сервера, пристрою та відтворення. Без підтвердження аудіовузла команда залишається непідтвердженою.') },
+      { label: localized('OFFLINE', 'БЕЗ СВЯЗИ', 'БЕЗ ЗВ’ЯЗКУ'), title: localized('The audio service runs beside the speakers', 'Служба работает рядом с аудиооборудованием', 'Служба працює поруч з аудіообладнанням'), body: localized('The Windows service stores processed commands and pending receipts locally. It can continue its local playback work while the server is unreachable, then send queued receipts when connectivity returns. The operator PWA still requires a connection to the server.', 'Windows-служба хранит обработанные команды и квитанции на узле. Она продолжает локальную работу при недоступности сервера и отправляет накопленные квитанции после восстановления связи. Для операторской PWA соединение с сервером по-прежнему необходимо.', 'Windows-служба зберігає оброблені команди та квитанції на вузлі. Вона продовжує локальну роботу за недоступності сервера й надсилає накопичені квитанції після відновлення зв’язку. Для операторської PWA з’єднання із сервером залишається необхідним.') },
+      { label: localized('SAFETY', 'БЕЗОПАСНОСТЬ', 'БЕЗПЕКА'), title: localized('Automatic alert dispatch is off by default', 'Автоматическая отправка тревог выключена', 'Автоматичне надсилання тривог вимкнене'), body: localized('The project documentation requires the college to approve alert sources and scenarios, name responsible operators and check the audio equipment before automatic dispatch is enabled.', 'По документации колледж должен утвердить источники и сценарии тревог, назначить ответственных операторов и проверить аудиооборудование до включения автоматической отправки.', 'За документацією коледж має затвердити джерела й сценарії тривог, призначити відповідальних операторів і перевірити аудіообладнання до ввімкнення автоматичного надсилання.') }
+    ]
+  },
+
 };
 
 const copy = {
@@ -147,7 +176,7 @@ const copy = {
   task: localized('The task', 'Задача', 'Задача'), built: localized('What I built', 'Что сделано', 'Що зроблено'), technology: localized('Technology', 'Технологии', 'Технології'),
   stackHeading: localized('Tools used in this project.', 'Инструменты, использованные в проекте.', 'Інструменти, використані в проєкті.'), stackBody: localized('Only the technologies that had a clear job in the product.', 'Только технологии, у которых была конкретная задача в продукте.', 'Лише технології, які мали конкретне завдання в продукті.'),
   notes: localized('Implementation notes', 'Детали реализации', 'Деталі реалізації'), next: localized('Next project', 'Следующий проект', 'Наступний проєкт'), contact: localized('Contact', 'Связаться', 'Зв’язатися'),
-  github: localized('Source on GitHub', 'Код на GitHub', 'Код на GitHub'), detailsUnavailable: localized('Private project', 'Закрытый проект', 'Закритий проєкт')
+  github: localized('Source on GitHub', 'Код на GitHub', 'Код на GitHub'), detailsUnavailable: localized('Private project', 'Закрытый проект', 'Закритий проєкт'), projectTool: localized('PROJECT TOOL', 'ТЕХНОЛОГИЯ ПРОЕКТА', 'ТЕХНОЛОГІЯ ПРОЄКТУ')
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -179,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-copy]').forEach((element) => { element.textContent = pick(copy[element.dataset.copy]); });
     langButtons.forEach((button) => button.classList.toggle('active', button.dataset.lang === language));
     byId('case-title').textContent = project.title;
-    byId('case-type').textContent = project.type;
+    byId('case-type').textContent = pick(project.type);
     byId('case-year').textContent = project.year;
     byId('case-summary').textContent = pick(project.summary);
     byId('case-role').textContent = pick(project.role);
@@ -190,7 +219,16 @@ document.addEventListener('DOMContentLoaded', () => {
     byId('case-image').src = project.image;
     byId('case-image').alt = `${project.title} preview`;
     byId('case-visual').className = `case-visual ${project.visualClass}`;
-    byId('case-mark').textContent = project.title.slice(0, 2).toUpperCase();
+    const mark = byId('case-mark');
+    mark.replaceChildren();
+    if (project.logo) {
+      const logo = document.createElement('img');
+      logo.src = project.logo;
+      logo.alt = `${project.title} logo`;
+      mark.appendChild(logo);
+    } else {
+      mark.textContent = project.title.slice(0, 2).toUpperCase();
+    }
 
     const liveLink = byId('case-live');
     liveLink.hidden = !project.liveUrl;
@@ -225,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const iconMarkup = typeof icon === 'string'
         ? `<i class="${icon}" aria-hidden="true"></i>`
         : `<img src="${icon.img}" alt="${icon.alt}">`;
-      card.innerHTML = `<div class="case-tech-logo">${iconMarkup}</div><b>${technology}</b><small>PROJECT TOOL</small>`;
+      card.innerHTML = `<div class="case-tech-logo">${iconMarkup}</div><b>${technology}</b><small>${pick(copy.projectTool)}</small>`;
       techGrid.appendChild(card);
     });
 
@@ -233,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     noteGrid.replaceChildren();
     project.notes.forEach((note) => {
       const article = document.createElement('article');
-      article.innerHTML = `<span>${note.label}</span><h3>${pick(note.title)}</h3><p>${pick(note.body)}</p>`;
+      article.innerHTML = `<span>${pick(note.label)}</span><h3>${pick(note.title)}</h3><p>${pick(note.body)}</p>`;
       noteGrid.appendChild(article);
     });
 
